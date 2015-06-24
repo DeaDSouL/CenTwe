@@ -27,10 +27,10 @@ Although you should have the following packages installed:
 
 
 ### Installation
-It's not clear for now, how it's going to be installed. Since it's still in the very developing stages.
+It's not clear for now, how it's going to be installed. Since it's still in the very early development stages.
 
 
 ### Usage
-It's not clear for now, how it's going to be used. Since it's still in the very developing stages.
+It's not clear for now, how it's going to be used. Since it's still in the very early development stages.
 
 
