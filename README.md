@@ -5,7 +5,6 @@ Things that should be done once CentOS Linux Desktop/Workstation is installed. L
 * Installing codecs.
 * Installing applications.
 
-
 ### License
 To be honest, I chose this license because it's the one that is being used by Linux kernel.
 
@@ -17,7 +16,6 @@ You should have received a copy of the GNU General Public License along with thi
 
 Copyright (C) [DeaDSouL](https://github.com/DeaDSouL)
 
-
 ### Dependencies
 It should not rely on anything. Since it focuses on the fresh CentOS installation.
 Although you should have the following packages installed:
@@ -25,12 +23,8 @@ Although you should have the following packages installed:
 * `yum`
 * `wget`
 
-
 ### Installation
 It's not clear for now, how it's going to be installed. Since it's still in the very early development stages.
 
-
 ### Usage
 It's not clear for now, how it's going to be used. Since it's still in the very early development stages.
-
-
