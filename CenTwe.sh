@@ -19,7 +19,7 @@ _vrepo_rpmforge='yes'	# RepoForge Repository
 # ------------------------------------------------------------------------------
 
 #
-_vfix_fffs4gnome='yes'	# fix the firefox fullscree adobe-flash for GNOME
+_vfix_gsfsflash4ff='yes'	# fix the firefox fullscree adobe-flash for GNOME
 
 # ------------------------------------------------------------------------------
 #		What tweaks you would like to apply ?
