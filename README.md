@@ -1,4 +1,4 @@
-# cosTweaks
+# CenTwe
 Things that should be done once CentOS Linux Desktop/Workstation is installed. Like: 
 * Adding repos.
 * Fixing things.
