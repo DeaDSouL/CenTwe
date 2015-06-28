@@ -24,7 +24,7 @@ function __app_slt3() {
 	_slt3file="sublime_text_3_build_${_slt3build}_${_varch}.tar.bz2"
 	_slt3link="http://c758482.r82.cf2.rackcdn.com/${_slt3file}"
 
-	[[ -e "${_dl_dir}/CenTwe_${_slt3file}" ]] && rm -rf "${_dl_dir}/CenTwe_${_slt3file}"
+	[[ -e "${_tmp_dir}/CenTwe_${_slt3file}" ]] && rm -rvf "${_tmp_dir}/CenTwe_${_slt3file}"
 
 	# Downloading the archived file
 	echo '[APP]: Downloading Sublime Text 3....'
