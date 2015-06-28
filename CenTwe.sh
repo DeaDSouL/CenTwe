@@ -62,5 +62,5 @@ _twks_gse4ff='yes'
 __file__="$0"
 __main__=`basename "$__file__"`
 __path__=`dirname "$__file__"`
-__inc__="$__path__/CenTwe"
+__inc__="$__path__/inc"
 source "$__inc__/core.init.sh"
