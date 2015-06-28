@@ -10,8 +10,6 @@ function __app_slt2() {
 
 	[[ -n "$1" ]] && echo "$1"
 
-	[[ `pwd -P` != "$_temp_dir" ]] && cd "$_temp_dir"
-
 	[[ "$_osarch" == 'x86_64' ]] && _varch='%20x64' || _varch=''
 
 	_slt2file="Sublime%20Text%202.0.2${_varch}.tar.bz2"

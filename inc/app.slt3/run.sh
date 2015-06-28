@@ -15,8 +15,6 @@ function __app_slt3() {
 	_slt3build="${_slt3build##* }"
 	_slt3build="${_slt3build%.*}"
 
-	[[ `pwd -P` != "$_temp_dir" ]] && cd "$_temp_dir"
-
 	[[ "$_osarch" == 'x86_64' ]] && _varch='x64' || _varch='x32'
 
 	_slt3file="sublime_text_3_build_${_slt3build}_${_varch}.tar.bz2"
