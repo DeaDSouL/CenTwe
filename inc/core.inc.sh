@@ -76,6 +76,7 @@ function __in_array() {
 
 # TODO: Need to make it works
 function __is_array() {
+	echo ''
 	#declare -p non-existing-var 2> /dev/null | grep -q '^declare \-a' && echo array || echo no array
 }
 
