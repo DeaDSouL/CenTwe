@@ -63,6 +63,7 @@ function __q() {
 # Making & checking the existence of the temp dir we're going to use
 function __mktemp_d() {
     [[ -z "$_tmp_dir" || ! -d "$_tmp_dir" ]] && _tmp_dir=`mktemp -d`
+    [[ `pwd -P` != "$_tmp_dir" ]] && cd "$_tmp_dir"
 }
 
 
