@@ -60,6 +60,12 @@ function __q() {
 }
 
 
+# Making & checking the existence of the temp dir we're going to use
+function __mktemp_d() {
+    [[ -z "$_tmp_dir" || ! -d "$_tmp_dir" ]] && _tmp_dir=`mktemp -d`
+}
+
+
 # Called as: __in_array "keyword" "${array_name[@]}"
 function __in_array() {
 	local e
