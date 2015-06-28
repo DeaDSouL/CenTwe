@@ -19,7 +19,7 @@ function __app_slt3() {
 
 	[[ `pwd -P` != "$_temp_dir" ]] && cd "$_temp_dir"
 
-	[[ `arch` == 'x86_64' ]] && _varch='x64' || _varch='x32'
+	[[ "$_osarch" == 'x86_64' ]] && _varch='x64' || _varch='x32'
 
 	_slt3file="sublime_text_3_build_${_slt3build}_${_varch}.tar.bz2"
 	_slt3link="http://c758482.r82.cf2.rackcdn.com/${_slt3file}"
