@@ -52,6 +52,14 @@ function __is_deps_ok() {
 }
 
 
+# Custom exit function
+function __q() {
+	echo 'Cleaning up the generated temporary files..'
+	[[ -d "$_tmp_dir" ]] && rm -rfv "$_tmp_dir"
+	exit $1
+}
+
+
 # Called as: __in_array "keyword" "${array_name[@]}"
 function __in_array() {
 	local e
