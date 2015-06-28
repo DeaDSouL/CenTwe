@@ -10,11 +10,6 @@ function __app_slt2() {
 
 	[[ -n "$1" ]] && echo "$1"
 
-	# Check the latest available build.no
-	_slt3build=`wget -qO- 'http://www.sublimetext.com/3' | grep -i 'The latest build is'`
-	_slt3build="${_slt3build##* }"
-	_slt3build="${_slt3build%.*}"
-
 	[[ `pwd -P` != "$_temp_dir" ]] && cd "$_temp_dir"
 
 	[[ "$_osarch" == 'x86_64' ]] && _varch='%20x64' || _varch=''
