@@ -23,10 +23,10 @@ function __app_slt3() {
 	[[ -e "${_tmp_dir}/CenTwe_${_slt3file}" ]] && rm -rvf "${_tmp_dir}/CenTwe_${_slt3file}"
 
 	# Downloading the archived file
-	echo '[APP]: Downloading Sublime Text 3....'
+	echo "[APP]: Downloading Sublime Text 3 (${_osarch})...."
 	wget --user-agent="${_uagent}" "${_slt3link}" -O "${_tmp_dir}/CenTwe_${_slt3file}"
 
-	echo '[APP]: Installing Sublime Text 3...'
+	echo "[APP]: Installing Sublime Text 3 (${_osarch})..."
 
 	# Extracting the archived file
 	tar -jxvf "${_tmp_dir}/CenTwe_${_slt3file}" -C /opt
