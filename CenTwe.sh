@@ -59,8 +59,10 @@ _twks_gse4ff='yes'
 # THAT'S IT ... DO NOT CHANGE ANYTHING BELOW, UNLESS YOU KNOW WHAT YOU'RE DOING
 # ------------------------------------------------------------------------------
 
-__file__="$0"
-__main__=`basename "$__file__"`
-__path__=`dirname "$__file__"`
+pushd `dirname $0` > /dev/null
+__path__=`pwd -P`
+popd > /dev/null
+__main__=`basename "$0"`
+__file__="$__path__/$0"
 __inc__="$__path__/inc"
 source "$__inc__/core.init.sh"
