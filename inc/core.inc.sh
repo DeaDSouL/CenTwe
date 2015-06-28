@@ -9,17 +9,17 @@
 function __isit_good2go() {
 	if [[ ("$_iam" == "root") && ("$_scriptis" != 'safe2run' || -z "$_username") ]]; then
 		echo 'You should run it as a normal user!'
-		echo 'Exiting..'; exit 1
+		echo 'Exiting..'; __q 1
 	elif [[ "$_iam" == "root" && "$_scriptis" == 'safe2run' && -n "$_username" ]]; then
 		#if id -u "$_username" >/dev/null 2>&1; then
 		# OR
 		if [[ `grep -c "^$_username:" /etc/passwd` == 0 ]]; then
 			echo "User: $_username doesn't exist !!"
-			echo 'Exiting..'; exit 1
+			echo 'Exiting..'; __q 1
 		fi
 	else
 			su -c "bash $__file__ 'safe2run' '$_iam'"
-			exit 0
+			__q 0
 	fi
 }
 
@@ -39,7 +39,7 @@ function __is_deps_ok() {
                 case "$REPLY" in
                 # 1 ) echo "yum -y install $_dpkg"; break;;
                 1 ) yum -y install $_dpkg; break;;
-                2 ) echo "Exiting..!"; exit 1; break;;
+                2 ) echo "Exiting..!"; __q 1; break;;
                 * ) echo "Invalid option !"; continue;;
                 esac
             done
@@ -83,6 +83,6 @@ function __write_file() {
 		echo "$1" | sed -e 's/^[ \t]*//' > "$2"
 	else
 		echo 'Missing contents Or file does not exist'
-		echo 'Exiting..'; exit 1
+		echo 'Exiting..'; __q 1
 	fi
 }
