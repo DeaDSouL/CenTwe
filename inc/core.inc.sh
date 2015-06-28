@@ -19,8 +19,36 @@ function __isit_good2go() {
 		fi
 	else
 			su -c "bash $__file__ 'safe2run' '$_iam'"
-		exit 0
+			exit 0
 	fi
+}
+
+
+# How should we proceed?
+function __is_deps_ok() {
+    echo '[Deps]: Checking the required dependencies..'
+    _deps_list=('newt' 'wget')
+    _all_pkgs=`rpm -qa`
+    # Do we have the required dependencies
+    for _dpkg in ${_deps_list[@]}; do
+        if [[ -z `echo "$_all_pkgs" | grep -i "^${_dpkg}-[0-9*]"` ]]; then
+            echo "[Deps]: Missing dependency '$_dpkg'"
+            _opts=("Install '$_dpkg' package." "Cancel and exit.")
+            PS3="What would you like to do? "
+            select _opt in "${_opts[@]}"; do
+                case "$REPLY" in
+                # 1 ) echo "yum -y install $_dpkg"; break;;
+                1 ) yum -y install $_dpkg; break;;
+                2 ) echo "Exiting..!"; exit 1; break;;
+                * ) echo "Invalid option !"; continue;;
+                esac
+            done
+            __is_deps_ok
+            return 0 # Avoiding the double looping for the same package
+        else
+            echo "[Deps]: '$_dpkg' is available."
+        fi
+    done
 }
 
 
@@ -50,5 +78,3 @@ function __write_file() {
 		echo 'Exiting..'; exit 1
 	fi
 }
-
-
