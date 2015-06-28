@@ -15,8 +15,6 @@ function __app_slt2() {
 	_slt3build="${_slt3build##* }"
 	_slt3build="${_slt3build%.*}"
 
-	__mktemp_d
-
 	[[ `pwd -P` != "$_temp_dir" ]] && cd "$_temp_dir"
 
 	[[ "$_osarch" == 'x86_64' ]] && _varch='%20x64' || _varch=''
