@@ -22,6 +22,7 @@ Although you should have the following packages installed:
 * `rpm`
 * `yum`
 * `wget`
+* `newt`/`whiptrail`
 
 ### Installation
 It's not clear for now, how it's going to be installed. Since it's still in the very early development stages.
