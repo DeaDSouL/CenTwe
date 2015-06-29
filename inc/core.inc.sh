@@ -60,6 +60,15 @@ function __q() {
 }
 
 
+# Aborting function: Should abort the sub-script process, if anything goes wrong
+# TODO: see if there is a way to implement this to make force the function to exit
+#		instead of exiting the whole script.
+function __a() {
+	echo "$1"
+	return 1
+}
+
+
 # Making & checking the existence of the temp dir we're going to use
 function __mktemp_d() {
     [[ -z "$_tmp_dir" || ! -d "$_tmp_dir" ]] && _tmp_dir=`mktemp -d`
