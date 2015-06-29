@@ -118,12 +118,12 @@ function __ver_comp () {
 
 # ------------------------------------------------------------------------------
 
-# usage ex: [[ `__need2update $1 $2` == 1 ]] && echo 'yes' || echo 'no'
+# usage ex: [[ `__need2update $1 $2` == 0 ]] && echo 'yes' || echo 'no'
 function __need2update() {
     # $1 : installed version
     # $2 : avilable version
     __ver_comp $1 $2
-    [[ $? == 2 ]] && echo 1 || echo 0
+    [[ $? == 2 ]] && echo 0 || echo 1
 }
 
 # ------------------------------------------------------------------------------
