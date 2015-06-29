@@ -9,6 +9,9 @@
 #				rpm -e PKG-NAME
 # 								ex: rpm -e nautilus-dropbox-2015.02.12-1.fc10.x86_64
 # 								ex: rpm -e nautilus-dropbox-1.6.2-1.fc10.x86_64
+# TODO: the dropbox repo should be disabled by:
+# 		echo 'enabled=0' >>  /etc/yum.repos.d/dropbox.repo
+#		because it uses the fedora repository, and doesn't have one for CentOS yet
 function __app_dropbox() {
 	_dir_app="$__inc__/app.dropbox"
 
