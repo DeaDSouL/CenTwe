@@ -64,7 +64,7 @@ function __q() {
 # TODO: see if there is a way to implement this to make force the function to exit
 #		instead of exiting the whole script.
 function __a() {
-	echo "$1"
+	echo "[APORTING]: $1"
 	return 1
 }
 
