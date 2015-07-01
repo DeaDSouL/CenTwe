@@ -63,6 +63,6 @@ pushd `dirname $0` > /dev/null
 __path__=`pwd -P`
 popd > /dev/null
 __main__=`basename "$0"`
-__file__="$__path__/$0"
+__file__="$__path__/$__main__"
 __inc__="$__path__/inc"
 source "$__inc__/core.init.sh.dev"
