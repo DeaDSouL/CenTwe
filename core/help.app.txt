@@ -1,0 +1,35 @@
+ _______________________
+|                       |
+| CenTwe -> Help -> App |
+|_______________________|______________________________________________________
+|                                                                              |
+| Managing the applications that the user may would like to have, yet they are |
+| not being provided in any CentOS repository.                                 |
+|                                                                              |
+| Available commands:                                                          |
+|     in, install      To install a specific app or many apps at once.         |
+|         Ex 1:        app install lighttable                                  |
+|            2:        app in sublime2 sublime3                                |
+|                                                                              |
+|     up, update       To update a specific app(s) or all apps at once.        |
+|         Ex 1:        app update sublime3                                     |
+|            2:        app up lighttable sublime2                              |
+|            3:        app up all                                              |
+|                                                                              |
+|     rf, refresh      To check the available updates.                         |
+|         Ex 1:        app rf                                                  |
+|            2:        app refresh                                             |
+|                                                                              |
+|     rm, remove       To remove a specific app or many apps at once.          |
+|         Ex 1:        app remove lighttable                                   |
+|            2:        app rm sublime2 sublime3                                |
+|                                                                              |
+|     ls, list         To list available, installed or all apps                |
+|         Ex 1:        app list all                                            |
+|            2:        app list installed                                      |
+|            3:        app list available                                      |
+|                                                                              |
+|     nf, info         To show app information                                 |
+|         Ex 1:        app info sublime2                                       |
+|______________________________________________________________________________|
+

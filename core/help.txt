@@ -1,0 +1,30 @@
+ ________________
+|                |
+| CenTwe -> Help |
+|________________|_____________________________________________________________
+|                                                                              |
+| Information:                                                                 |
+|     Package......CenTwe (0.0.1)                                              |
+|     Author.......Mubarak Alrashidi (DeaDSouL)                                |
+|     License......GNU/GPL v2                                                  |
+|     URL..........https://github.com/DeaDSouL/CenTwe                          |
+|                                                                              |
+| Description:                                                                 |
+|     CenTwe is a tool that helps you to improve your CentOS Linux             |
+|     Desktop/Workstation once it has been installed. By:                      |
+|         * Adding repos.                                                      |
+|         * Fixing things.                                                     |
+|         * Installing codecs.                                                 |
+|         * Installing applications.                                           |
+|                                                                              |
+| Available sub-help:                                                          |
+|     help app                                                                 |
+|     help twk                                                                 |
+|     help fix                                                                 |
+|     help repo                                                                |
+|                                                                              |
+| Extra Commands:                                                              |
+|     clear        To clear the screen.                                        |
+|     exit         To quit.                                                    |
+|______________________________________________________________________________|
+
