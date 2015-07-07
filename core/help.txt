@@ -25,6 +25,6 @@
 |                                                                              |
 | Extra Commands:                                                              |
 |     clear        To clear the screen.                                        |
-|     exit         To quit.                                                    |
+|     quit, exit   To quit.                                                    |
 |______________________________________________________________________________|
 
