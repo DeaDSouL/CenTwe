@@ -157,6 +157,56 @@ function init.shell() {
 
 # ------------------------------------------------------------------------------
 
+# should always be used before setting or getting any value.
+# $1 : type    -    $2 : name
+function plugin.use() {
+    [[ -n $1 ]] && plugin_type=$1
+    [[ -n $2 ]] && plugin_name=$2
+}
+
+# ------------------------------------------------------------------------------
+
+# $1 : key    -    $2 : value
+function plugin.set() {
+    plugin_info[$plugin_type/$plugin_name.$1]=$2
+}
+
+# ------------------------------------------------------------------------------
+
+function plugin.get() {
+    local ret=${plugin_info[$plugin_type/$plugin_name.$1]}
+    [[ -n "$ret" ]] && echo "$ret"
+}
+
+# ------------------------------------------------------------------------------
+
+function plugin.need2update() {
+    __need2update `plugin.get 'verlocal'` `plugin.get 'veronline'`
+}
+
+# ------------------------------------------------------------------------------
+
+function plugin.check_update() {
+    # This is independent
+    # local verlocal=`plugin.get 'verlocal'`
+    # local veronline=`plugin.get 'veronline'`
+    # if [[ `__need2update $verlocal $veronline` == 0 ]]; then
+    #     plugin.set 'update' 'available'
+    # else
+    #     plugin.set 'update' 'unavailable'
+    # fi
+
+    # This depends on 'plugin.need2update'
+    # May be we should delete 'plugin.need2update' and use previous commented code.
+    if [[ `plugin.need2update` == 0 ]]; then
+        plugin.set 'update' 'available'
+    else
+        plugin.set 'update' 'unavailable'
+    fi
+}
+
+# ------------------------------------------------------------------------------
+
 
 
 
