@@ -157,6 +157,113 @@ function init.shell() {
 
 # ------------------------------------------------------------------------------
 
+# TODO: not finished or tested yet
+function cmd.app() {
+    # Preparing the needed variables
+    local appname appfuncin
+    declare -a appnames=(${@:2})
+
+    case $1 in
+        help)
+            cmd.help "app"
+            ;;
+
+        test)
+            [[ `type -t app.lighttable_install` == 'function' ]] && echo 'function exists' || echo 'function does not exist'
+            echo 'args:'
+            for appname in ${!appnames[@]}; do
+                echo "$appname : ${appnames[$appname]}"
+            done
+            # echo "appnames : $appnames"
+            # echo "@        : $@"
+
+            echo 'Imported:'
+            for f in ${!imported[@]}; do
+                echo "${imported[$f]} <---> $f"
+            done
+            ;;
+        list|ls)
+            echo 'show available apps to be installed'
+            ;;
+
+        install|in)
+            echo 'Installing the app now'
+            for appname in ${appnames[@]}; do
+                appfuncin="app.${appname}_install"
+                # echo "appfuncin : $appfuncin"
+                # echo "!appfuncin: $!appfuncin"
+                [[ `is_function $appfuncin` == 0 ]] && echo "$appname->$appfuncin"
+            done
+            # if [[ "$_app_status_lighttable" == "available" ]]; then
+            #     echo -n "[APP]: Are you sure you want to install this app? [y/N]: "
+            #     read _vyesno
+            #     [[ "$_vyesno" == [Yy] ]] && app.lighttable_install || continue
+            # else
+            #     echo "[APP]: 'Light Table' is already installed."
+            # fi
+            ;;
+
+        remove|rm)
+            echo 'Removing the app now'
+            # if [[ "$_app_status_lighttable" == "installed" ]]; then
+            #     echo -n "[APP]: Are you sure you want to remove this app? [y/N]: "
+            #     read _vyesno
+            #     [[ "$_vyesno" == [Yy] ]] && app.lighttable_remove || continue
+            # else
+            #     echo "[APP]: 'Light Table' is not installed."
+            # fi
+            ;;
+
+        update|up)
+            echo 'Updating the app now'
+            # app.lighttable_update
+            ;;
+
+        info)
+            echo 'Showing app info now'
+            # $2 :  optional argument ('force-reload')
+            #       if it was provided, then we should re-setting app infos.
+            # app.lighttable_info_get $2
+            ;;
+
+        *) continue;;
+    esac
+}
+
+# ------------------------------------------------------------------------------
+
+# TODO: code it
+function cmd.twk() {
+    return 0
+}
+
+# ------------------------------------------------------------------------------
+
+# TODO: code it
+function cmd.fix() {
+    return 0
+}
+
+# ------------------------------------------------------------------------------
+
+# TODO: code it
+function cmd.repoo() {
+    return 0
+}
+
+# ------------------------------------------------------------------------------
+
+# Help function
+function cmd.help() {
+    local help_file='help'
+    [[ -n $1 ]] && help_file+=".${1}"
+    help_file="$__core__/${help_file}.txt"
+    [[ -f "$help_file" ]] || help_file="$__core__/help.txt"
+    cat "$help_file"
+}
+
+# ------------------------------------------------------------------------------
+
 # should always be used before setting or getting any value.
 # $1 : type    -    $2 : name
 function plugin.use() {
