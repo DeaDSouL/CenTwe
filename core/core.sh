@@ -207,6 +207,31 @@ function plugin.check_update() {
 
 # ------------------------------------------------------------------------------
 
+function yum.up() {
+    yum -y update
+}
+
+# ------------------------------------------------------------------------------
+
+function yum.in() {
+    # $* :  All of the positional parameters, seen as a single word
+    # $@ :  Same as $*, but each parameter is a quoted string, that is, the
+    #       parameters are passed on intact, without interpretation or expansion.
+    #       This means, among other things, that each parameter in the argument
+    #       list is seen as a separate word.
+    # URL:  http://www.tldp.org/LDP/abs/html/internalvariables.html#APPREF
+    yum -y install $@
+}
+
+# ------------------------------------------------------------------------------
+
+function yum.upin() {
+    yum.up
+    yum.in $@
+}
+
+# ------------------------------------------------------------------------------
+
 
 
 
