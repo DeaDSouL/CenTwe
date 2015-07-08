@@ -149,7 +149,7 @@ function init.shell() {
             help)   cmd.help ${cmd[1]};;
             clear)  clear;;
             quit|exit)
-                    echo 'Goodbye!'; exit 0; break;;
+                    echo 'Goodbye!'; __q 0; break;;
             *)      echo 'Invalid command. Try: help'; continue;;
         esac
     done
