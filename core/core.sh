@@ -207,6 +207,54 @@ function plugin.check_update() {
 
 # ------------------------------------------------------------------------------
 
+# URL: http://stackoverflow.com/a/4025065
+# We should not call it directly, instead we should use `__need2update $1 $2`
+function __ver_comp () {
+    if [[ $1 == $2 ]]; then
+        return 0
+    fi
+    local OIFS=$IFS
+    local IFS=.
+    local i ver1=($1) ver2=($2)
+    # fill empty fields in ver1 with zeros
+    for ((i=${#ver1[@]}; i<${#ver2[@]}; i++)); do
+        ver1[i]=0
+    done
+    for ((i=0; i<${#ver1[@]}; i++)); do
+        if [[ -z ${ver2[i]} ]]; then
+            # fill empty fields in ver2 with zeros
+            ver2[i]=0
+        fi
+        if ((10#${ver1[i]} > 10#${ver2[i]})); then
+            IFS=$OIFS
+            return 1
+        fi
+        if ((10#${ver1[i]} < 10#${ver2[i]})); then
+            IFS=$OIFS
+            return 2
+        fi
+    done
+    return 0
+}
+
+# ------------------------------------------------------------------------------
+
+# Check whether we need to update or not
+# return type  : echo
+# return value : 0|1
+# 0: yes
+# 1: no
+# usage __need2update local_version online_version
+# ex: [[ `__need2update 1.0.1 1.0.2` == 0 ]] && echo 'need to update' || echo 'no need to update'
+function __need2update() {
+    # $1 : installed version
+    # $2 : avilable version
+    __ver_comp $1 $2
+    [[ $? == 2 ]] && echo 0 || echo 1
+}
+
+# ------------------------------------------------------------------------------
+
 function yum.up() {
     yum -y update
 }
