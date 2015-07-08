@@ -207,6 +207,31 @@ function plugin.check_update() {
 
 # ------------------------------------------------------------------------------
 
+function is_function() {
+    [[ -n $1 && `type -t $1` == 'function' ]] && echo 0 || echo 1
+}
+
+# ------------------------------------------------------------------------------
+
+# Custom exit function
+function __q() {
+    echo 'Cleaning up the generated temporary files..'
+    [[ -d "$__tmpd__" ]] && rm -rfv "$__tmpd__"
+    exit $1
+}
+
+# ------------------------------------------------------------------------------
+
+# Aborting function: Should abort the sub-script process, if anything goes wrong
+# TODO: see if there is a way to implement this to make force the function to exit
+#       instead of exiting the whole script.
+function __a() {
+    echo "[APORTING]: $1"
+    return 1
+}
+
+# ------------------------------------------------------------------------------
+
 # URL: http://stackoverflow.com/a/4025065
 # We should not call it directly, instead we should use `__need2update $1 $2`
 function __ver_comp () {
