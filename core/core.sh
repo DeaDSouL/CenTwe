@@ -52,7 +52,7 @@ function init.chk_user() {
         fi
     else
             su -c "bash $__file__ 'safe2run' '$_iam'"
-            __q 0
+            __q 0 'silent'
     fi
 }
 
@@ -322,7 +322,7 @@ function is_function() {
 
 # Custom exit function
 function __q() {
-    echo 'Cleaning up the generated temporary files..'
+    [[ $2 != 'silent' ]] && echo 'Cleaning up the generated temporary files..'
     [[ -d "$__tmpd__" ]] && rm -rfv "$__tmpd__"
     exit $1
 }
