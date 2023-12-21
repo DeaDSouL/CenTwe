@@ -18,7 +18,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 You should have received a copy of the GNU General Public License along with this program.  If not, see [gnu.org/licenses](http://www.gnu.org/licenses/).
 
-Copyright (C) [DeaDSouL](https://github.com/DeaDSouL)
+Copyright (C) [DeaDSouL](https://gitlab.com/DeaDSouL)
 
 ### Dependencies
 It should not rely on anything. Since it focuses on the fresh CentOS installation.

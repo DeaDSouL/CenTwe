@@ -7,7 +7,7 @@
 # | Package......CenTwe (0.0.1)                                             | # 
 # | Author.......Mubarak Alrashidi (DeaDSouL)                               | # 
 # | License......GNU/GPL v2                                                 | # 
-# | URL..........https://github.com/DeaDSouL/CenTwe                         | # 
+# | URL..........https://gitlab.com/DeaDSouL/CenTwe                         | # 
 # |_________________________________________________________________________| # 
 #                                                                             # 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
