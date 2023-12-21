@@ -1,3 +1,7 @@
+# IMPORTANT
+The repository has been moved to [GitLab.com/DeaDSouL/CenTwe](https://gitlab.com/DeaDSouL/CenTwe).
+
+
 # CenTwe
 Things that should be done once CentOS Linux Desktop/Workstation is installed. Like: 
 * Adding repos.
